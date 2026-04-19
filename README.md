@@ -1,42 +1,28 @@
-# DeveloperLook Frontend Project: GetHyped
+# DeveloperLook Frontend Project — GetHyped
 
-## Project Overview
+## Overview
 
-DeveloperLook Frontend Project: GetHyped is a modern, responsive web interface built to deliver a clean and engaging user experience across desktop and mobile devices. The project focuses on strong visual hierarchy, consistent spacing, responsive layout behavior, and smooth navigation interactions.
-
-The application is designed with attention to modern frontend development practices, emphasizing usability, maintainable code structure, and polished interface design.
-
-## Objective
-
-The goal of this project is to build a visually refined and responsive frontend experience that reflects modern web standards. Special attention has been given to layout composition, typography, spacing, responsiveness, and mobile navigation behavior to ensure a smooth and consistent experience for users on different screen sizes.
+GetHyped is a responsive frontend project built with React and Vite, focused on recreating a modern, visually engaging landing page experience across desktop and mobile devices. The main goal was to maintain strong visual hierarchy, clean spacing, responsive behavior, and smooth navigation interactions.
 
 ## Tech Stack
 
-This project is built using:
-
-- **React.js**
-- **Vite**
-- **JavaScript (ES6+)**
-- **CSS / Tailwind CSS**
+- React.js
+- Vite
+- JavaScript (ES6+)
+- Tailwind CSS
 
 ## Features
 
-- Modern responsive user interface
-- Mobile-friendly design
+- Responsive desktop and mobile layout
 - Interactive hamburger menu
-- Clean and structured component-based architecture
-- Optimized layout and spacing for multiple screen sizes
-- Maintainable and scalable frontend codebase
+- Component-based structure
+- Clean spacing and typography
+- Modern UI with smooth user experience
 
-## Development Approach
+## Development Note
 
-The project is developed with a focus on:
-
-- clean and reusable components
-- responsive design principles
-- visual consistency
-- accessibility-conscious layout decisions
-- organized and readable frontend code
+This project was a hands-on learning experience for me. I used AI extensively during development to solve problems faster, improve implementation, and understand better approaches while building. It may not be a perfect one-to-one match with the original reference, but I genuinely enjoyed the process and learned a lot from it.
 
 ## Live Link
-live link coming soon...
+
+[https://gethyped.web.app](https://gethyped.web.app)
