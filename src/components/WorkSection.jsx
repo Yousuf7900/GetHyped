@@ -105,7 +105,7 @@ const WorkSection = () => {
     return (
         <section
             id="work"
-            className="bg-[#f2eee8] px-4 py-14 sm:px-6 lg:px-10 lg:py-20"
+            className="px-4 py-14 sm:px-6 lg:px-10 lg:py-20"
         >
             <div className="mx-auto max-w-[1520px]">
                 <div className="grid gap-10 lg:grid-cols-[420px_minmax(0,1fr)] lg:gap-20 xl:grid-cols-[450px_minmax(0,1fr)] xl:gap-24">

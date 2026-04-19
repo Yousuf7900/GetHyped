@@ -42,13 +42,13 @@ const Intro = () => {
 
                         <a
                             href="#contact"
-                            className="mt-5 inline-flex h-[28px] w-fit items-center overflow-hidden rounded-[9px] border border-black bg-transparent text-[12px] font-medium text-black"
+                            className="group mt-5 inline-flex h-[28px] w-fit items-center overflow-hidden rounded-[9px] border border-black bg-transparent text-[12px] font-medium text-black transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-3 hover:scale-[1.03]"
                         >
                             <span className="px-3 py-2 leading-none">
                                 Leer ons kennen
                             </span>
 
-                            <span className="mr-1 ml-1 flex h-[24px] w-[24px] items-center justify-center rounded-[8px] bg-black text-white">
+                            <span className="mr-1 ml-1 flex h-[24px] w-[24px] items-center justify-center rounded-[8px] bg-black text-white transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
