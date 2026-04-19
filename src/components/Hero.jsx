@@ -16,9 +16,7 @@ const Hero = () => {
             <section className="px-4 pb-10 pt-32 sm:px-6 sm:pt-36 lg:px-10 lg:pb-0 lg:pt-50">
                 <div className="mx-auto w-full">
                     <h1 className="w-full text-6xl font-semibold leading-[0.9] tracking-tight text-black/90 sm:text-7xl md:text-8xl lg:text-9xl">
-                        Get Hyped.
-                        <br /> Noticed.
-                        <br /> Results.
+                        Get Hyped. Get <br /> Noticed. Get Results.
                     </h1>
 
                     <p className="mt-10 text-lg font-semibold leading-[1.35] text-black/85 sm:text-xl lg:text-4xl">
