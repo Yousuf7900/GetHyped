@@ -89,6 +89,18 @@ const ExpertiseSection = () => {
                         panelHeight * fakeScrollRatio + "px";
                 }
 
+                gsap.set(panel, {
+                    x: 0,
+                    y: 0,
+                    xPercent: 0,
+                    yPercent: 0,
+                    rotate: 0,
+                    scale: 1,
+                    opacity: 1,
+                    transformOrigin: "85% 20%",
+                    force3D: true,
+                });
+
                 const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: panel,
@@ -100,6 +112,19 @@ const ExpertiseSection = () => {
                         pin: true,
                         pinSpacing: false,
                         scrub: true,
+                        invalidateOnRefresh: true,
+                        onLeaveBack: () => {
+                            gsap.set(panel, {
+                                x: 0,
+                                y: 0,
+                                xPercent: 0,
+                                yPercent: 0,
+                                rotate: 0,
+                                scale: 1,
+                                opacity: 1,
+                                clearProps: "transform",
+                            });
+                        },
                     },
                 });
 
@@ -118,25 +143,25 @@ const ExpertiseSection = () => {
                         scale: 1,
                         opacity: 1,
                         rotate: 0,
-                        xPercent: 0,
-                        yPercent: 0,
+                        x: 0,
+                        y: 0,
                         transformOrigin: "85% 20%",
                     },
                     {
-                        scale: 0.86,
-                        opacity: 0.78,
-                        rotate: 11,
-                        xPercent: 10,
-                        yPercent: -10,
+                        scale: 0.92,
+                        opacity: 0.82,
+                        rotate: 2.5,
+                        x: 10,
+                        y: -8,
                         duration: 0.82,
                         ease: "none",
                     }
                 ).to(panel, {
-                    scale: 0.8,
+                    scale: 0.88,
                     opacity: 0.08,
-                    rotate: 15,
-                    xPercent: 16,
-                    yPercent: -18,
+                    rotate: 3.5,
+                    x: 16,
+                    y: -12,
                     duration: 0.18,
                     ease: "none",
                 });
