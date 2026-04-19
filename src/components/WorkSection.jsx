@@ -3,6 +3,7 @@ import { useRef } from "react";
 import workVideo1 from "../assets/videos/work1.mp4";
 import workVideo2 from "../assets/videos/work2.mp4";
 import workVideo3 from "../assets/videos/work3.mp4";
+import { FaArrowRight } from "react-icons/fa";
 
 const works = [
     {
@@ -120,11 +121,12 @@ const WorkSection = () => {
 
                         <a
                             href="#contact"
-                            className="mt-7 inline-flex items-center gap-2 rounded-[14px] border border-black bg-white px-4 py-2.5 text-[14px] font-medium text-black transition hover:bg-black hover:text-white"
+                            className="group mt-7 inline-flex origin-center items-center gap-2 rounded-[14px] border border-black px-4 py-2.5 text-[14px] font-medium text-black transform transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-3 hover:scale-[1.02]"
                         >
-                            Bekijk al ons werk
-                            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-black text-sm text-white">
-                                →
+                            <span>Bekijk al ons werk</span>
+
+                            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-black text-sm text-white transition-all duration-300 ">
+                                <FaArrowRight />
                             </span>
                         </a>
                     </div>
