@@ -1,4 +1,5 @@
-import girl from '../assets/BrandsLogo/girl.jpg'
+import girl from "../assets/BrandsLogo/girl.jpg";
+import work1 from "../assets/videos/work1.mp4";
 
 const Intro = () => {
     return (
@@ -7,27 +8,48 @@ const Intro = () => {
             className="px-4 py-12 sm:px-6 sm:py-16 lg:px-10 lg:py-20"
         >
             <div className="mx-auto max-w-[1400px]">
-                <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-[220px_520px_1fr] lg:grid-rows-[auto_auto] lg:gap-x-[160px] lg:gap-y-12">
+                <div className="grid grid-cols-1 gap-y-8 lg:grid-cols-[220px_520px_1fr] lg:grid-rows-[auto_auto] lg:gap-x-[160px] lg:gap-y-12">
                     <div className="lg:col-span-3">
-                        <h2 className="text-[38px] font-semibold leading-[0.92] tracking-[-0.045em] text-black sm:text-[52px] lg:text-[58px]">
+                        <h2 className="max-w-[700px] text-[3.1rem] font-semibold leading-[0.92] tracking-[-0.05em] text-black sm:max-w-none sm:text-[52px] lg:text-[58px]">
                             Wij maken content die
-                            opvalt. Die <br /> blijft hangen. Die jouw doelgroep <br />
-                            raakt en jouw merk in beweging <br />
-                            brengt. Snel, krachtig en energiek.
+                            <br className="hidden sm:block" />
+                            opvalt. Die blijft hangen.
+                            <br />
+                            Die jouw doelgroep
+                            <br />
+                            raakt en jouw merk in
+                            <br />
+                            beweging brengt. Snel,
+                            <br />
+                            krachtig en energiek.
                         </h2>
                     </div>
 
-                    <div className="flex items-start">
-                        <div className="overflow-hidden rounded-[14px] bg-[#e8dcc7]">
+                    <div className="order-2 flex justify-center lg:order-none lg:items-start lg:justify-start">
+
+                        {/* mobile version */}
+                        <div className="w-full max-w-[510px] rotate-[3.5deg] overflow-hidden rounded-[30px] bg-[#e8dcc7] sm:max-w-[560px] lg:hidden">
+                            <video
+                                src={work1}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="h-[700px] w-full object-cover object-center sm:h-[760px]"
+                            />
+                        </div>
+
+                        {/* Desktop image */}
+                        <div className="hidden overflow-hidden rounded-[14px] bg-[#e8dcc7] lg:block">
                             <img
                                 src={girl}
                                 alt="Get Hyped team"
-                                className="h-[180px] w-[160px] object-cover sm:h-[210px] sm:w-[185px] lg:h-[212px] lg:w-[168px]"
+                                className="lg:h-[212px] lg:w-[168px] lg:object-cover"
                             />
                         </div>
                     </div>
 
-                    <div className="flex flex-col justify-end lg:pb-1">
+                    <div className="order-3 flex flex-col justify-end lg:order-none lg:pb-1">
                         <p className="max-w-[430px] text-[18px] font-semibold leading-[1.18] tracking-[-0.02em] text-black sm:text-[22px] lg:text-[20px]">
                             We stoppen niet bij mooie plaatjes en
                             <br />
@@ -42,13 +64,13 @@ const Intro = () => {
 
                         <a
                             href="#contact"
-                            className="group mt-5 inline-flex h-[28px] w-fit items-center overflow-hidden rounded-[9px] border border-black bg-transparent text-[12px] font-medium text-black transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-3 hover:scale-[1.03]"
+                            className="group mt-6 inline-flex w-fit items-center overflow-hidden rounded-[16px] border border-black bg-white text-[14px] font-medium text-black transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-2 hover:scale-[1.02] lg:mt-5 lg:h-[28px] lg:rounded-[9px] lg:bg-transparent lg:text-[12px] hover:lg:-rotate-3 hover:lg:scale-[1.03]"
                         >
-                            <span className="px-3 py-2 leading-none">
+                            <span className="px-4 py-3 leading-none lg:px-3 lg:py-2">
                                 Leer ons kennen
                             </span>
 
-                            <span className="mr-1 ml-1 flex h-[24px] w-[24px] items-center justify-center rounded-[8px] bg-black text-white transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+                            <span className="mr-1 ml-1 flex h-[36px] w-[36px] items-center justify-center rounded-[12px] bg-black text-white transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] lg:h-[24px] lg:w-[24px] lg:rounded-[8px]">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
@@ -57,7 +79,7 @@ const Intro = () => {
                                     strokeWidth="2.2"
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
-                                    className="h-3.5 w-3.5"
+                                    className="h-4 w-4 lg:h-3.5 lg:w-3.5"
                                 >
                                     <path d="M5 12h14" />
                                     <path d="m13 5 7 7-7 7" />
@@ -66,7 +88,7 @@ const Intro = () => {
                         </a>
                     </div>
 
-                    <div className="flex items-end justify-start lg:justify-end lg:pr-6">
+                    <div className="order-4 hidden items-end justify-start lg:flex lg:justify-end lg:pr-6">
                         <button
                             type="button"
                             aria-label="Scroll to next section"

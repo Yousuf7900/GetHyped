@@ -21,12 +21,19 @@ const brandItems = [
     { id: 8, name: "Brand 08", logo: brand8 },
 ];
 
-const CARD_WIDTH = 380;
-const CARD_HEIGHT = 380;
-const GAP = 20;
+const DESKTOP_CARD_WIDTH = 380;
+const DESKTOP_CARD_HEIGHT = 380;
+const DESKTOP_GAP = 20;
+const DESKTOP_SAFE_PAD_X = 52;
+const DESKTOP_SAFE_PAD_Y = 74;
+
+const MOBILE_CARD_WIDTH = 112;
+const MOBILE_CARD_HEIGHT = 112;
+const MOBILE_GAP = 10;
+const MOBILE_SAFE_PAD_X = 18;
+const MOBILE_SAFE_PAD_Y = 28;
+
 const AUTO_SCROLL_SPEED = 0.135;
-const SAFE_PAD_X = 52;
-const SAFE_PAD_Y = 74;
 
 const NORMAL_TRANSFORM = {
     rotate: 0,
@@ -34,11 +41,11 @@ const NORMAL_TRANSFORM = {
 };
 
 const PRESS_PATTERN = [
-    { rotate: 10, scale: 1.018 },  // 1st: left to right
-    { rotate: -10, scale: 1.016 }, // 2nd: right to left
-    { rotate: -6, scale: 1.01 },   // 3rd: right to left small
-    { rotate: 6, scale: 1.01 },    // 4th: left to right small
-    { rotate: -8, scale: 1.014 },  // 5th: right to left
+    { rotate: 10, scale: 1.018 },
+    { rotate: -10, scale: 1.016 },
+    { rotate: -6, scale: 1.01 },
+    { rotate: 6, scale: 1.01 },
+    { rotate: -8, scale: 1.014 },
 ];
 
 const buildPressedTransforms = (items) => {
@@ -64,7 +71,27 @@ const BrandsSection = () => {
     });
 
     const [isPressed, setIsPressed] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const [pressedTransforms] = useState(() => buildPressedTransforms(brandItems));
+
+    useEffect(() => {
+        const checkScreen = () => {
+            setIsMobile(window.innerWidth < 640);
+        };
+
+        checkScreen();
+        window.addEventListener("resize", checkScreen);
+
+        return () => {
+            window.removeEventListener("resize", checkScreen);
+        };
+    }, []);
+
+    const CARD_WIDTH = isMobile ? MOBILE_CARD_WIDTH : DESKTOP_CARD_WIDTH;
+    const CARD_HEIGHT = isMobile ? MOBILE_CARD_HEIGHT : DESKTOP_CARD_HEIGHT;
+    const GAP = isMobile ? MOBILE_GAP : DESKTOP_GAP;
+    const SAFE_PAD_X = isMobile ? MOBILE_SAFE_PAD_X : DESKTOP_SAFE_PAD_X;
+    const SAFE_PAD_Y = isMobile ? MOBILE_SAFE_PAD_Y : DESKTOP_SAFE_PAD_Y;
 
     const tripledBrands = useMemo(() => {
         return [...brandItems, ...brandItems, ...brandItems];
@@ -72,7 +99,7 @@ const BrandsSection = () => {
 
     const singleSetWidth = useMemo(() => {
         return brandItems.length * CARD_WIDTH + (brandItems.length - 1) * GAP;
-    }, []);
+    }, [CARD_WIDTH, GAP]);
 
     const applyTranslate = (value) => {
         const track = trackRef.current;
@@ -159,9 +186,8 @@ const BrandsSection = () => {
     return (
         <section className="overflow-hidden px-4 py-10 sm:px-6 lg:px-10 lg:py-16">
             <div className="mx-auto max-w-[1880px] border-b border-black/10 pb-5">
-
                 <div className="max-w-[560px]">
-                    <h2 className="text-[56px] font-semibold leading-[0.95] tracking-[-0.04em] text-black sm:text-[72px] lg:text-[96px]">
+                    <h2 className="text-[42px] font-semibold leading-[0.95] tracking-[-0.04em] text-black sm:text-[72px] lg:text-[96px]">
                         These brands
                         <br />
                         got hyped.
@@ -169,7 +195,7 @@ const BrandsSection = () => {
                 </div>
 
                 <div
-                    className="relative mt-10 overflow-hidden sm:mt-12"
+                    className="relative mt-8 overflow-hidden sm:mt-12"
                     onMouseDown={(e) => handlePointerDownTrack(e.clientX)}
                     onMouseMove={(e) => handlePointerMoveTrack(e.clientX)}
                     onMouseUp={handlePointerUpTrack}
@@ -216,7 +242,7 @@ const BrandsSection = () => {
                                         onMouseUp={() => setIsPressed(false)}
                                         onTouchStart={() => setIsPressed(true)}
                                         onTouchEnd={() => setIsPressed(false)}
-                                        className="relative shrink-0 rounded-[28px] border border-black/15 bg-[#f2eee8] transition-transform duration-450 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                                        className="relative shrink-0 rounded-[18px] border border-black/15 bg-[#f2eee8] transition-transform duration-450 ease-[cubic-bezier(0.22,1,0.36,1)] sm:rounded-[28px]"
                                         style={{
                                             width: `${CARD_WIDTH}px`,
                                             height: `${CARD_HEIGHT}px`,
@@ -225,12 +251,16 @@ const BrandsSection = () => {
                                             transformOrigin: "center center",
                                         }}
                                     >
-                                        <div className="flex h-full w-full items-center justify-center px-10">
+                                        <div className="flex h-full w-full items-center justify-center px-4 sm:px-10">
                                             <img
                                                 src={brand.logo}
                                                 alt={brand.name}
                                                 draggable="false"
-                                                className="pointer-events-none max-h-[92px] max-w-[78%] object-contain"
+                                                className={`pointer-events-none object-contain ${
+                                                    isMobile
+                                                        ? "max-h-[34px] max-w-[72%]"
+                                                        : "max-h-[92px] max-w-[78%]"
+                                                }`}
                                             />
                                         </div>
                                     </button>

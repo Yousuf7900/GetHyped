@@ -14,6 +14,7 @@ const works = [
         accent: "#ff5a1f",
         overlayBg: "#ff5a1f",
         wrapperClassName: "lg:pt-[130px]",
+        mobileRotate: "-rotate-[2deg]",
     },
     {
         id: 2,
@@ -23,6 +24,7 @@ const works = [
         accent: "#1f8cff",
         overlayBg: "#1f8cff",
         wrapperClassName: "lg:pt-[76px]",
+        mobileRotate: "rotate-[2deg]",
     },
     {
         id: 3,
@@ -32,6 +34,7 @@ const works = [
         accent: "#35c58b",
         overlayBg: "#35c58b",
         wrapperClassName: "lg:pt-[18px]",
+        mobileRotate: "-rotate-[2deg]",
     },
 ];
 
@@ -45,7 +48,7 @@ const WorkCard = ({ work }) => {
             videoRef.current.currentTime = 0;
             await videoRef.current.play();
         } catch {
-            // ignore autoplay issues
+            // Error er lal dag theke bachar jonno comment add korlam.
         }
     };
 
@@ -57,23 +60,26 @@ const WorkCard = ({ work }) => {
 
     return (
         <article
-            className="group relative w-full overflow-hidden rounded-[30px] border-[4px] bg-white transition-all duration-300 ease-out hover:-rotate-[0.9deg] hover:-translate-y-[4px] hover:shadow-[0_18px_36px_rgba(0,0,0,0.10)]"
+            className={`group relative mx-auto w-[88%] overflow-hidden rounded-[30px] border-[4px] bg-white transition-all duration-300 ease-out ${work.mobileRotate} sm:w-full lg:mx-0 lg:w-full lg:rotate-0 lg:hover:-translate-y-[4px] lg:hover:-rotate-[0.9deg] lg:hover:shadow-[0_18px_36px_rgba(0,0,0,0.10)]`}
             style={{
                 borderColor: work.accent,
-                height: "clamp(410px, 34vw, 525px)",
+                height: "clamp(470px, 112vw, 590px)",
             }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <video
-                ref={videoRef}
-                src={work.video}
-                muted
-                playsInline
-                loop
-                preload="metadata"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-            />
+            <div className="absolute inset-0 overflow-hidden rounded-[24px]">
+                <video
+                    ref={videoRef}
+                    src={work.video}
+                    muted
+                    playsInline
+                    loop
+                    autoPlay
+                    preload="metadata"
+                    className="absolute inset-0 h-full w-full scale-[1.03] object-cover transition-transform duration-500 ease-out lg:scale-100 lg:group-hover:scale-[1.02]"
+                />
+            </div>
 
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/14 via-black/0 to-transparent" />
 
@@ -82,7 +88,7 @@ const WorkCard = ({ work }) => {
                 style={{ backgroundColor: work.overlayBg }}
             >
                 <div className="absolute right-4 top-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-sm transition-transform duration-300 ease-out group-hover:translate-x-[4px] group-hover:-translate-y-[4px]">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black shadow-sm transition-transform duration-300 ease-out lg:group-hover:translate-x-[4px] lg:group-hover:-translate-y-[4px]">
                         <span className="text-base leading-none">↗</span>
                     </div>
                 </div>
@@ -121,17 +127,17 @@ const WorkSection = () => {
 
                         <a
                             href="#contact"
-                            className="group mt-7 inline-flex origin-center items-center gap-2 rounded-[14px] border border-black px-4 py-2.5 text-[14px] font-medium text-black transform transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-3 hover:scale-[1.02]"
+                            className="group mt-7 inline-flex origin-center items-center gap-2 rounded-[14px] border border-black px-4 py-2.5 text-[14px] font-medium text-black transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-rotate-3 hover:scale-[1.02]"
                         >
                             <span>Bekijk al ons werk</span>
 
-                            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-black text-sm text-white transition-all duration-300 ">
+                            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-black text-sm text-white transition-all duration-300">
                                 <FaArrowRight />
                             </span>
                         </a>
                     </div>
 
-                    <div className="grid items-start gap-x-12 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 xl:gap-x-14">
+                    <div className="grid items-start gap-y-10 sm:grid-cols-2 sm:gap-x-12 lg:grid-cols-3 lg:gap-x-12 xl:gap-x-14">
                         {works.map((work) => (
                             <div key={work.id} className={work.wrapperClassName}>
                                 <WorkCard work={work} />

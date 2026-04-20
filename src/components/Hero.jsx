@@ -13,13 +13,21 @@ const Hero = () => {
 
     return (
         <>
-            <section className="px-4 pb-10 pt-32 sm:px-6 sm:pt-36 lg:px-10 lg:pb-0 lg:pt-50">
+            <section className="px-4 pb-8 pt-28 sm:px-6 sm:pt-32 lg:px-10 lg:pb-0 lg:pt-50">
                 <div className="mx-auto w-full">
-                    <h1 className="w-full text-6xl font-semibold leading-[0.9] tracking-tight text-black/90 sm:text-7xl md:text-8xl lg:text-9xl">
-                        Get Hyped. Get <br /> Noticed. Get Results.
+                    <h1 className="w-full text-[4.2rem] font-semibold leading-[0.92] tracking-[-0.04em] text-black/90 sm:text-[5.2rem] md:text-8xl lg:text-9xl">
+                        <span className="block lg:inline">
+                            Get Hyped.
+                        </span>{" "}
+                        <span className="block lg:inline">
+                            Get Noticed.
+                        </span>{" "}
+                        <span className="block lg:inline">
+                            Get Results.
+                        </span>
                     </h1>
 
-                    <p className="mt-10 text-lg font-semibold leading-[1.35] text-black/85 sm:text-xl lg:text-4xl">
+                    <p className="mt-8 max-w-[320px] text-[1.05rem] font-semibold leading-[1.3] text-black/85 sm:mt-10 sm:max-w-[420px] sm:text-xl lg:max-w-none lg:text-4xl">
                         Klaar met gokken op content
                         <br />
                         die niets oplevert?
@@ -28,42 +36,39 @@ const Hero = () => {
             </section>
 
             <section className="overflow-hidden px-4 sm:px-6 lg:px-10">
-                <div className="mx-auto py-12 lg:py-16">
-                    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-0">
-                        
-                        {/* CARD 1 - Increased to h-[500px] and lg:h-[600px] */}
+                <div className="mx-auto py-8 sm:py-10 lg:py-16">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 lg:gap-0">
                         <div
                             onMouseEnter={() => setActiveCard(1)}
                             onMouseLeave={() => setActiveCard(null)}
-                            className={`relative z-[1] flex h-[500px] flex-col justify-between rounded-[34px] bg-sky-500 p-6 shadow-sm transition-all duration-[700ms] ease-[cubic-bezier(0.22,1,0.36,1)] sm:p-7 lg:h-[600px] lg:px-9 lg:py-8 ${getCardClasses(
+                            className={`relative z-[2] flex h-[320px] flex-col justify-between rounded-[28px] bg-sky-500 p-5 shadow-sm transition-all duration-[700ms] ease-[cubic-bezier(0.22,1,0.36,1)] sm:h-[380px] sm:p-6 lg:h-[600px] lg:rounded-[34px] lg:px-9 lg:py-8 ${getCardClasses(
                                 1,
-                                "lg:translate-x-[18px] lg:translate-y-[10px] lg:-rotate-[6deg] lg:scale-100",
+                                "rotate-[-5deg] translate-y-2 translate-x-1 lg:translate-x-[18px] lg:translate-y-[10px] lg:-rotate-[6deg] lg:scale-100",
                                 "lg:z-20 lg:translate-x-[6px] lg:translate-y-0 lg:rotate-0 lg:scale-[1.015]",
                                 "lg:translate-y-[12px] lg:-rotate-[7.5deg] lg:scale-[0.992]"
                             )}`}
                         >
-                            <h3 className="text-5xl font-black leading-none text-black sm:text-6xl lg:text-[5.2rem]">
+                            <h3 className="text-[3.6rem] font-black leading-none text-black sm:text-6xl lg:text-[5.2rem]">
                                 10M+
                             </h3>
 
                             <div>
-                                <p className="text-2xl font-semibold leading-tight text-black lg:text-[3rem]">
+                                <p className="text-[1rem] font-semibold leading-tight text-black sm:text-[1.5rem] lg:text-[3rem]">
                                     Organische views
                                 </p>
-                                <div className="mt-3 h-px w-full bg-black/45" />
-                                <p className="mt-4 text-lg text-black/85 lg:text-[1.05rem]">
+                                <div className="mt-2 h-px w-full bg-black/45 lg:mt-3" />
+                                <p className="mt-3 text-[0.95rem] text-black/85 sm:text-base lg:mt-4 lg:text-[1.05rem]">
                                     Groei door slimme content
                                 </p>
                             </div>
                         </div>
 
-                        {/* CARD 2 - Increased to h-[500px] and lg:h-[600px] */}
                         <div
                             onMouseEnter={() => setActiveCard(2)}
                             onMouseLeave={() => setActiveCard(null)}
-                            className={`relative z-[2] h-[500px] overflow-hidden rounded-[34px] bg-neutral-100 shadow-sm transition-all duration-[700ms] ease-[cubic-bezier(0.22,1,0.36,1)] lg:h-[600px] ${getCardClasses(
+                            className={`relative z-[1] mt-4 h-[320px] overflow-hidden rounded-[28px] bg-neutral-100 shadow-sm transition-all duration-[700ms] ease-[cubic-bezier(0.22,1,0.36,1)] sm:h-[380px] lg:mt-0 lg:h-[600px] lg:rounded-[34px] ${getCardClasses(
                                 2,
-                                "lg:translate-x-[-10px] lg:translate-y-[22px] lg:-rotate-[1.5deg] lg:scale-100",
+                                "rotate-[8deg] -translate-x-3 translate-y-4 lg:translate-x-[-10px] lg:translate-y-[22px] lg:-rotate-[1.5deg] lg:scale-100",
                                 "lg:z-20 lg:translate-x-0 lg:translate-y-0 lg:rotate-0 lg:scale-[1.015]",
                                 "lg:translate-y-[12px] lg:rotate-[1deg] lg:scale-[1.008]"
                             )}`}
@@ -78,7 +83,6 @@ const Hero = () => {
                             />
                         </div>
 
-                        {/* CARD 3 - Increased to h-[500px] and lg:h-[600px] */}
                         <div
                             onMouseEnter={() => setActiveCard(3)}
                             onMouseLeave={() => setActiveCard(null)}
@@ -104,7 +108,6 @@ const Hero = () => {
                             </div>
                         </div>
 
-                        {/* CARD 4 - Increased to h-[500px] and lg:h-[600px] */}
                         <div
                             onMouseEnter={() => setActiveCard(4)}
                             onMouseLeave={() => setActiveCard(null)}
@@ -124,7 +127,6 @@ const Hero = () => {
                                 className="h-full w-full object-cover"
                             />
                         </div>
-
                     </div>
                 </div>
             </section>

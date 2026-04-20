@@ -177,7 +177,7 @@ const ExpertiseSection = () => {
         <section
             id="expertises"
             ref={wrapperRef}
-            className=" px-4 py-10 sm:px-6 lg:px-10 lg:py-16"
+            className="px-4 py-10 sm:px-6 lg:px-10 lg:py-16"
         >
             <div className="mx-auto max-w-[1600px]">
                 <div className="slides-wrapper space-y-0">
@@ -205,7 +205,26 @@ const ExpertiseSection = () => {
                                         {item.title}
                                     </h2>
 
-                                    <div className="mt-14 grid flex-1 gap-10 lg:mt-[180px] lg:grid-cols-[460px_minmax(0,1fr)] lg:items-end">
+                                    <div className="mt-10 flex flex-1 flex-col gap-8 lg:mt-[180px] lg:grid lg:grid-cols-[460px_minmax(0,1fr)] lg:items-end lg:gap-10">
+                                        <div className="lg:hidden">
+                                            <div
+                                                className="ml-4 w-[52vw] max-w-[290px] -rotate-[2deg] overflow-hidden rounded-[26px] border-[5px]"
+                                                style={{
+                                                    borderColor: item.imageBorder,
+                                                }}
+                                            >
+                                                <video
+                                                    src={item.media}
+                                                    autoPlay
+                                                    muted
+                                                    loop
+                                                    playsInline
+                                                    preload="auto"
+                                                    className="h-[250px] w-full object-cover"
+                                                />
+                                            </div>
+                                        </div>
+
                                         <div className="max-w-[500px]">
                                             <h3 className="text-[28px] font-extrabold leading-[1.04] tracking-[-0.035em] text-black sm:text-[34px] lg:text-[38px]">
                                                 {item.subtitle}

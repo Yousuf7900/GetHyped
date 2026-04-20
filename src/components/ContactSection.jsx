@@ -75,7 +75,7 @@ const ContactSection = () => {
             {stickers.map((item) => (
                 <div
                     key={item.id}
-                    className="pointer-events-none absolute z-[5] transition-all duration-700 ease-out"
+                    className="pointer-events-none absolute z-[5] hidden transition-all duration-700 ease-out md:block"
                     style={{
                         left: item.x,
                         top: item.y,
@@ -87,7 +87,7 @@ const ContactSection = () => {
                 </div>
             ))}
 
-            <div className="relative z-10 mx-auto flex min-h-[100vh] max-w-[1720px] flex-col items-center text-center">
+            <div className="relative z-10 mx-auto hidden min-h-[100vh] max-w-[1720px] flex-col items-center text-center md:flex">
                 <h2 className="max-w-[1100px] text-[60px] font-semibold leading-[0.9] tracking-[-0.05em] text-black sm:text-[84px] lg:text-[126px]">
                     Let&apos;s Get Hyped!
                 </h2>
@@ -117,6 +117,10 @@ const ContactSection = () => {
                 <div className="mt-auto w-full pt-16">
                     <Footer />
                 </div>
+            </div>
+
+            <div className="relative z-10 mx-auto w-full md:hidden">
+                <Footer />
             </div>
         </section>
     );

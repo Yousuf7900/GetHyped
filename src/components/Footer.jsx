@@ -1,11 +1,12 @@
 import { FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa6";
 import { SiTiktok } from "react-icons/si";
+import fireImg from "../assets/fire.png";
 import { StickerLogo } from "./ContactSection";
 
 const IconCircle = ({ children, href = "#" }) => (
     <a
         href={href}
-        className="flex h-[44px] w-[44px] items-center justify-center rounded-full bg-white text-[18px] text-black transition-transform duration-300 hover:-translate-y-1"
+        className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-white text-[14px] text-black transition-transform duration-300 hover:-translate-y-1 md:h-[44px] md:w-[44px] md:text-[18px]"
     >
         {children}
     </a>
@@ -14,7 +15,89 @@ const IconCircle = ({ children, href = "#" }) => (
 const Footer = () => {
     return (
         <footer className="relative pb-0">
-            <div className="relative overflow-visible rounded-t-[36px]">
+            <div className="md:hidden">
+                <div className="px-1 pb-8 pt-0">
+                    <div className="relative mx-auto max-w-[330px] px-4 pb-8 pt-4 text-center">
+                        <div
+                            className="absolute inset-0 -z-10 rounded-[28px] bg-[#dcd5cb]"
+                            style={{
+                                clipPath: "polygon(0 10%, 100% 0, 100% 100%, 0 100%)",
+                            }}
+                        />
+
+                        <div className="flex flex-col items-center">
+                            <StickerLogo className="w-[225px]" />
+
+                            <a
+                                href="mailto:info@gethyped.nl"
+                                className="mt-5 inline-flex h-[32px] items-center rounded-[10px] bg-[#ff6423] pl-3 pr-[4px] text-[11px] font-semibold text-white"
+                            >
+                                <span>Get Hyped! Neem contact op</span>
+                                <span className="ml-2 flex h-[22px] w-[22px] items-center justify-center rounded-[8px] bg-white">
+                                    <img src={fireImg} className="h-3.5 w-3.5 object-contain" alt="" />
+                                </span>
+                            </a>
+
+                            <div className="mt-4 flex flex-wrap justify-center gap-2">
+                                {["Expertises", "Work", "About", "Contact"].map((item) => (
+                                    <a
+                                        key={item}
+                                        href={`#${item.toLowerCase()}`}
+                                        className="rounded-[7px] bg-white px-3 py-[7px] text-[11px] font-medium text-black"
+                                    >
+                                        {item}
+                                    </a>
+                                ))}
+                            </div>
+
+                            <div className="mt-5 flex items-center justify-center gap-3">
+                                <IconCircle href="#">
+                                    <FaLinkedinIn />
+                                </IconCircle>
+                                <IconCircle href="#">
+                                    <SiTiktok />
+                                </IconCircle>
+                                <IconCircle href="#">
+                                    <FaInstagram />
+                                </IconCircle>
+                                <IconCircle href="#">
+                                    <FaYoutube />
+                                </IconCircle>
+                            </div>
+
+                            <div className="mt-6 text-[12px] font-medium leading-[1.5] text-black/70">
+                                <a href="mailto:info@gethyped.nl" className="block">
+                                    info@gethyped.nl
+                                </a>
+                                <a href="tel:+31615337496" className="block">
+                                    +31 6 1533 7496
+                                </a>
+                            </div>
+
+                            <div className="mt-5 text-[12px] font-medium leading-[1.5] text-black/70">
+                                <p>Beltrumsestraat 6,</p>
+                                <p>7141 AL Groenlo</p>
+                            </div>
+
+                            <a
+                                href="/"
+                                className="mt-5 text-[10px] font-medium text-black/40"
+                            >
+                                Privacyvoorwaarden
+                            </a>
+
+                            <p className="mt-4 text-[10px] font-medium text-black/40">
+                                © 2025 Get Hyped
+                            </p>
+                            <p className="mt-1 text-[10px] font-medium text-black/40">
+                                © Design by Dylan
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="relative hidden overflow-visible rounded-t-[36px] md:block">
                 <div
                     className="absolute inset-0 z-0 rounded-t-[36px] bg-[#e4ddd2]"
                     style={{
