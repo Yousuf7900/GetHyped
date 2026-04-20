@@ -95,7 +95,7 @@ const ContactSection = () => {
                 <div className="mt-10 flex flex-col items-center gap-4 sm:mt-12 sm:flex-row sm:gap-[14px]">
                     <a
                         href="mailto:info@gethyped.nl"
-                        className="inline-flex h-[52px] items-center rounded-[18px] border border-black/35 bg-transparent pl-5 pr-[6px] text-[17px] font-semibold text-black transition-colors duration-300 hover:bg-white/60"
+                        className="inline-flex h-[52px] items-center rounded-[18px] border border-black/35 bg-transparent pl-5 pr-[6px] text-[17px] font-semibold text-black shadow-[0_0_0_rgba(0,0,0,0)] transition-all duration-700 ease-[cubic-bezier(0.22,1.8,0.36,1)] hover:translate-y-[1px] hover:rotate-[-2.5deg] hover:scale-[1.03] hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] active:scale-[0.98] will-change-transform"
                     >
                         <span>Mail ons direct</span>
                         <span className="ml-3 flex h-[40px] w-[40px] items-center justify-center rounded-[13px] bg-black text-[18px] text-white">
@@ -105,7 +105,7 @@ const ContactSection = () => {
 
                     <a
                         href="#contact"
-                        className="inline-flex h-[52px] items-center rounded-[18px] bg-[#ff6423] pl-5 pr-[6px] text-[17px] font-semibold text-white transition-transform duration-300 hover:-translate-y-[1px]"
+                        className="inline-flex h-[52px] items-center rounded-[18px] bg-[#ff6423] pl-5 pr-[6px] text-[17px] font-semibold text-white shadow-[0_0_0_rgba(0,0,0,0)] transition-all duration-700 ease-[cubic-bezier(0.22,1.8,0.36,1)] hover:translate-y-[1px] hover:rotate-[-2.5deg] hover:scale-[1.03] hover:shadow-[0_12px_30px_rgba(255,100,35,0.28)] active:scale-[0.98] will-change-transform"
                     >
                         <span>Get Results</span>
                         <span className="ml-3 flex h-[40px] w-[40px] items-center justify-center rounded-[13px] bg-white">
